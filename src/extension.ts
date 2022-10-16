@@ -21,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
 
-  vscode.commands.registerCommand('wch.toggleWch', () => {
+  const registerCommand = vscode.commands.registerCommand('wch.toggleWch', () => {
     if (!enabled) {
       enabled = true;
       vscode.window.showInformationMessage('WCH Enabled');
@@ -42,6 +42,7 @@ export function activate(context: vscode.ExtensionContext) {
       prevLineContents = "";
 
       enabled = false;
+      vscode.workspace.saveAll(false);
       vscode.window.showInformationMessage('WCH Disabled');
       return;
     }
@@ -126,7 +127,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     });
 
-    context.subscriptions.push(onChangeEvent);
+    context.subscriptions.push(registerCommand, onChangeEvent);
 
 }
 
