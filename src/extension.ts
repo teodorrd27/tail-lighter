@@ -24,6 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
   vscode.commands.registerCommand('wch.toggleWch', () => {
     if (!enabled) {
       enabled = true;
+      vscode.window.showInformationMessage('WCH Enabled');
       return;
     }
     if (enabled) {
@@ -41,6 +42,7 @@ export function activate(context: vscode.ExtensionContext) {
       prevLineContents = "";
 
       enabled = false;
+      vscode.window.showInformationMessage('WCH Disabled');
       return;
     }
   });
