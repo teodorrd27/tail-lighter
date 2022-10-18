@@ -10,8 +10,9 @@ export function activate(context: vscode.ExtensionContext) {
   let snippetInserted = false;
   let prevLine = -1;
   let prevLineContents = "";
+  let editor: vscode.TextEditor | undefined;
+
   const snippet = 'border border-red-500 ';
-  const editor = vscode.window.activeTextEditor;
 
   let enabled = false;
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
@@ -24,6 +25,7 @@ export function activate(context: vscode.ExtensionContext) {
   const registerCommand = vscode.commands.registerCommand('wch.toggleWch', () => {
     if (!enabled) {
       enabled = true;
+      editor = vscode.window.activeTextEditor;
       vscode.window.showInformationMessage('WCH Enabled');
       return;
     }
@@ -48,6 +50,11 @@ export function activate(context: vscode.ExtensionContext) {
     }
   });
 
+    const onChangeEditor = vscode.window.onDidChangeActiveTextEditor(async (e) => {
+      let newEditor = vscode.window.activeTextEditor;
+      let newLanguage = newEditor?.document.languageId;
+      editor = newLanguage === 'typescriptreact' ? newEditor : undefined;
+    });
   
     const onChangeEvent = vscode.window.onDidChangeTextEditorSelection(async (e) => {
       if (!enabled) {
@@ -67,7 +74,7 @@ export function activate(context: vscode.ExtensionContext) {
         // console.log('prevline is ', prevLine);
 
         if (prevLine !== editor.selection.active.line) {
-          console.log(editor.selection.start.line, '-', editor.selection.end.line);
+          // console.log(editor.selection.start.line, '-', editor.selection.end.line);
           if(snippetRange && prevLineContents.indexOf(snippet) !== -1) {
             const range = new vscode.Range(new vscode.Position(snippetRange.line, snippetRange.character), new vscode.Position(snippetRange.line, snippetRange.character + snippet.length));
             editor.edit(editBuilder => {
@@ -114,6 +121,7 @@ export function activate(context: vscode.ExtensionContext) {
                 vscode.workspace.saveAll(false);
               }
             // }
+          // 
           } else {
 
           }
@@ -127,7 +135,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     });
 
-    context.subscriptions.push(registerCommand, onChangeEvent);
+    context.subscriptions.push(registerCommand, onChangeEvent, onChangeEditor);
 
 }
 
