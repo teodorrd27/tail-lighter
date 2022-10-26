@@ -90,19 +90,20 @@ export function activate(context: vscode.ExtensionContext) {
           const slice = text.slice(text.indexOf('<') + 1, text.indexOf('>'));
           const classNamePos = slice.indexOf('className');
           if (classNamePos !== -1) {
+            const classNameSlice = slice.slice(slice.indexOf('classname'));
             let targetQuote = "";
             let classNameContents = "";
-            for (let c of slice) {
+            for (let c of classNameSlice) {
               if (c === "'") {
                 targetQuote = "'";
-                let classNameSlice1 = slice.slice(slice.indexOf(targetQuote) + 1);
+                let classNameSlice1 = classNameSlice.slice(classNameSlice.indexOf(targetQuote) + 1);
                 // console.log('class name slice 1 is ', classNameSlice1);
                 classNameContents = classNameSlice1.slice(0, classNameSlice1.indexOf(targetQuote));
                 break;
               }
               if (c === '"') {
                 targetQuote = '"';
-                let classNameSlice1 = slice.slice(slice.indexOf(targetQuote) + 1);
+                let classNameSlice1 = classNameSlice.slice(classNameSlice.indexOf(targetQuote) + 1);
                 classNameContents = classNameSlice1.slice(0, classNameSlice1.indexOf(targetQuote));
                 break;
               }
