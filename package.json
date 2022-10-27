@@ -1,12 +1,13 @@
 {
   "name": "tail-lighter",
   "displayName": "Tail Lighter",
+  "icon": "images/icon.png",
   "description": "Identify your rendered DOM elements at the speed of one click",
   "license": "Apache-2.0",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/teodorrd27/tail-lighter"
   },
   "engines": {
     "vscode": "^1.71.2"
