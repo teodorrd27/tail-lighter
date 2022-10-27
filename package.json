@@ -1,6 +1,7 @@
 {
   "name": "tail-lighter",
   "displayName": "Tail Lighter",
+  "publisher": "TeoRadu",
   "icon": "images/icon.png",
   "description": "Identify your rendered DOM elements at the speed of one click",
   "license": "Apache-2.0",
