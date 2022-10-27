@@ -1,4 +1,4 @@
-# Tail Lighter 🕯️
+# Tail Lighter <🕯️/>
 ## Identify your rendered DOM elements at the speed of a click
 This is a Tailwind solution for instantly highighting HTML elements on the fly while you are developing locally.
 When you've got 20 nested divs and your eyes glaze over, just click the tag and its associated rendered element will be instantly highlighted by a border in your browser.
