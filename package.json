@@ -1,7 +1,7 @@
 {
-  "name": "wch",
-  "displayName": "wysiwyg-container-highlighter",
-  "description": "Highlight html containers as you develop them.",
+  "name": "tail-lighter",
+  "displayName": "Tail Lighter",
+  "description": "Identify your rendered DOM elements at the speed of one click",
   "license": "Apache-2.0",
   "version": "0.0.1",
   "repository": {
@@ -12,13 +12,13 @@
     "vscode": "^1.71.2"
   },
   "categories": [
-    "Other"
+    "Visualization", "Snippets", "Other"
   ],
   "contributes": {
     "commands": [
       {
-        "command": "wch.toggleWch",
-        "title": "Toggle WCH"
+        "command": "tail_lighter.toggle",
+        "title": "Toggle Tail Lighter"
       }
     ]
   },
@@ -30,7 +30,7 @@
     "vscode:prepublish": "yarn run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "deploy": "vsce package && code --install-extension wch-0.0.1.vsix",
+    "deploy": "vsce package && code --install-extension tail-lighter-0.0.1.vsix",
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js"

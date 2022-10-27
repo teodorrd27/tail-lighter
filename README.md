@@ -1,1 +1,1 @@
-## WCH - Wysiwyg Container Highlighter
+# Tail Lighter

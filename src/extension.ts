@@ -12,11 +12,11 @@ export function activate(context: vscode.ExtensionContext) {
 
   let enabled = false;
 
-  const registerCommand = vscode.commands.registerCommand('wch.toggleWch', () => {
+  const registerCommand = vscode.commands.registerCommand('tail_lighter.toggle', () => {
     if (!enabled) {
       enabled = true;
       editor = vscode.window.activeTextEditor;
-      vscode.window.showInformationMessage('WCH Enabled');
+      vscode.window.showInformationMessage('Tail Lighter Enabled 🔥');
       return;
     }
     if (enabled) {
@@ -35,7 +35,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       enabled = false;
       vscode.workspace.saveAll(false);
-      vscode.window.showInformationMessage('WCH Disabled');
+      vscode.window.showInformationMessage('Tail Lighter Disabled 🧯');
       return;
     }
   });
