@@ -5,7 +5,7 @@
   "icon": "images/icon.png",
   "description": "Identify your rendered DOM elements at the speed of one click",
   "license": "Apache-2.0",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/teodorrd27/tail-lighter"
