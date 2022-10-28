@@ -1,6 +1,6 @@
 # Tail Lighter <🕯️/>
 ## Identify your rendered DOM elements at the speed of a click
-This is a Tailwind solution for instantly highighting HTML elements on the fly while you are developing locally.
+This is a Tailwind solution for instantly highlighting HTML elements on the fly while you are developing locally.
 When you've got 20 nested divs and your eyes glaze over, just click the tag and its associated rendered element will be instantly highlighted by a border in your browser.
 
 No-code website builders always outline the elements you are working on in the hierarchy, so here's a start towards achieving that experience in React+Tailwind in VSCode.
@@ -21,7 +21,7 @@ This is a pre-beta version of this tool. It manipulates text directly in your wo
 
 ## Behavior and Limitations
 - An eligible line has to be a tag that already has the `className` prop on it.
-- Once Tail Lighter is toggled on, it will keep track of which tag is highlighted and will move the snipped around to wherever you select next.
-- Every time there's a snipped inserted or removed, your file will be automatically saved.
+- Once Tail Lighter is toggled on, it will keep track of which tag is highlighted and will move the snippet around to wherever you select next.
+- Every time there's a snippet inserted or removed, your file will be automatically saved.
 - Undo and Find operations are a bit tricky. That is why there's the toggle feature. You can toggle Tail Lighter off when performing undos or finds.
 - You can move between files but the memory is not portable across them for the time being. I advise you to toggle off Tail Lighter when you intend to switch working on a different file.
