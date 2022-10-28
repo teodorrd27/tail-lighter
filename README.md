@@ -5,6 +5,8 @@ When you've got 20 nested divs and your eyes glaze over, just click the tag and 
 
 No-code website builders always outline the elements you are working on in the hierarchy, so here's a start towards achieving that experience in React+Tailwind in VSCode.
 
+[Demo](https://user-images.githubusercontent.com/18678490/198547259-1e66b7a6-ab03-4743-8530-49f7540a3e98.mp4)
+
 ## Disclaimer
 This is a pre-beta version of this tool. It manipulates text directly in your working file and also automatically saves on each selection. It heavily relies on `tsc -w` to watch for changes.
 
@@ -15,6 +17,7 @@ This is a pre-beta version of this tool. It manipulates text directly in your wo
 - Toggle ON the Tail Lighter in your chosen tsx file
 - Click on a line with a tag that has a `className` prop.
 - Voila, dat div tho 🤘 (looking to make the colour customisable soon).
+
 
 ## Behavior and Limitations
 - An eligible line has to be a tag that already has the `className` prop on it.
